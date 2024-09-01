@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: thecat-api
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - DB_URI=mongodb://db:27017/thecatDB
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - db
+
+  db:
+    container_name: thecat-db
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
