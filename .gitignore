@@ -1,0 +1,42 @@
+
+node_modules/
+
+
+dist/
+build/
+
+# Ignore environment-specific files
+.env
+.env.development
+.env.test
+.env.local
+.env.*.local
+
+# Ignore log files
+*.log
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore editor-specific files
+.vscode/
+.idea/
+
+# Ignore dependency lock files
+package-lock.json
+yarn.lock
+
+# Ignore compiled files
+*.class
+*.jar
+*.war
+*.ear
+
+# Ignore miscellaneous files
+*.swp
+*.swo
+*.tmp
+*.bak
+*.backup
+*.old
