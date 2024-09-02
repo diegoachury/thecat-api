@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import connectDB from "./database/db";
 import userRoutes from "./routes/user.routes";
 import catRoutes from "./routes/cat.routes";
+import cors from "cors";
 
 dotenv.config();
 
@@ -12,6 +13,12 @@ const PORT = process.env.PORT || 3000;
 connectDB();
 
 app.use(express.json());
+
+app.use(
+  cors({
+    origin: "http://localhost:4200",
+  })
+);
 
 app.use("/api/users", userRoutes);
 app.use("/api/cats", catRoutes);
